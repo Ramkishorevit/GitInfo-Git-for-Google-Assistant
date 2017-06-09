@@ -15,15 +15,9 @@ var git = require("../API/git.js");
 
 router.post('/assistant', function(req, res, next) {
   
-  // const app = new ApiAiApp({request: req, response: res});
-  // app.ask('You are yet to create a git repo mate!');
-  // app.handleRequest(responseHandler);
-  var data = {
-		"speech": "Barack Hussein Obama II is the 44th and current President of the United States.",
-		"displayText": "Barack Hussein Obama II is the 44th and current President of the United States, and the first African American to hold the office. Born in Honolulu, Hawaii, Obama is a graduate of Columbia University   and Harvard Law School, where ",
-		"source": "DuckDuckGo"
-	};
-  res.status(200).json(data);
+   const app = new ApiAiApp({request: req, response: res});
+   app.ask('You are yet to create a git repo mate!');
+   app.handleRequest(responseHandler);
 
 });
 
