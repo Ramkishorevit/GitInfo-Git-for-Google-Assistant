@@ -29,9 +29,6 @@ function responseHandler (app) {
          app.ask('Welcome! Tell about which git organization you wanna hear ?');
          break;
 
-    case TELL_ISSUES:
-         app.ask('You are yet to create a git repo mate!');
-         break;
 
     case ORGANIZATION_NAME:
          let organization = app.getRawInput();
