@@ -13,7 +13,7 @@ var git = require("../API/git.js");
 
 
 
-router.get('/', function(req, res, next) {
+router.get('/assistant', function(req, res, next) {
   
   // const app = new ApiAiApp({request: req, response: res});
   // app.ask('You are yet to create a git repo mate!');
