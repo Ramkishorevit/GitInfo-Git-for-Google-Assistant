@@ -7,7 +7,7 @@ const TELL_ISSUES='tell.issues';
 const ORGANIZATION_NAME='DefaultWelcomeIntent.DefaultWelcomeIntent-custom';
 const REPO_NAME='repo.name';
 
-var repoList='Choose a repo';
+var repoList='Choose a repo'+'\n';
 
 var git = require("../API/git.js");
 
@@ -35,9 +35,10 @@ function responseHandler (app) {
          git.getRepositories(app.getRawInput(),function (err, stream){      
          for(var i=0;i<JSON.parse(stream).length;i++)
          {
-         	repoList = repoList+' , ' + JSON.parse(stream)[i].name;
+         	repoList = JSON.parse(stream)[i].name;
+           app.ask(repoList+'\n')
+
          }
-         app.ask(repoList)
       });
         break;
 
