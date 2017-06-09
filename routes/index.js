@@ -35,10 +35,12 @@ function responseHandler (app) {
          git.getRepositories(app.getRawInput(),function (err, stream){      
          for(var i=0;i<JSON.parse(stream).length;i++)
          {
-         	repoList = JSON.parse(stream)[i].name;
-           app.ask(repoList+'\n')
+         	repoList = repoList+'\n' + JSON.parse(stream)[i].name;
 
          }
+
+         app.ask(repoList)
+
       });
         break;
 
