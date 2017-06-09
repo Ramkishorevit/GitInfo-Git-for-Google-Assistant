@@ -16,7 +16,6 @@ var git = require("../API/git.js");
 router.post('/assistant', function(req, res, next) {
   
    const app = new ApiAiApp({request: req, response: res});
-   app.ask('You are yet to create a git repo mate!');
    app.handleRequest(responseHandler);
 
 });
@@ -25,6 +24,7 @@ function responseHandler (app) {
   // intent contains the name of the intent you defined in the Actions area of API.AI
   let intent = app.getIntent();
   switch (intent) {
+    
     case WELCOME_INTENT:
          app.ask('Welcome! Tell about which git organization you wanna hear ?');
          break;
