@@ -16,7 +16,6 @@ var git = require("../API/git.js");
 router.post('/assistant', function(req, res, next) {
   
    const app = new ApiAiApp({request: req, response: res});
-   const assistant = new Assistant({request: request, response: response});
    app.handleRequest(responseHandler);
 
 });
@@ -32,7 +31,7 @@ function responseHandler (app) {
 
 
     case ORGANIZATION_NAME:
-         assistant.data.organization = app.getRawInput();
+         app.data.organization = app.getRawInput();
          git.getRepositories(app.getRawInput(),function (err, stream){      
          for(var i=0;i<JSON.parse(stream).length;i++)
          {
@@ -47,7 +46,7 @@ function responseHandler (app) {
 
     case REPO_NAME:
           //list(app);
-          app.ask(assistant.data.organization);
+          app.ask(app.data.organization);
           break;
 
   }
