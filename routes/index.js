@@ -52,7 +52,7 @@ function responseHandler (app) {
 }
 
 function list (app) {
-  app.askWithList(app.buildRichResponse()
+  app.ask(app.buildRichResponse()
     .addSimpleResponse(app.getRawInput())
     .addSuggestions(
       ['STARS', 'BUGS COUNT', 'FORKS', 'COMMITS']
