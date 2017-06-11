@@ -32,7 +32,7 @@ function responseHandler (app) {
 
 
     case ORGANIZATION_NAME:
-         app.data.organization = app.getRawInput();
+         //app.data.organization = app.getRawInput();
          git.getRepositories(app.getRawInput(),function (err, stream){      
          for(var i=0;i<JSON.parse(stream).length;i++)
          {
@@ -40,7 +40,7 @@ function responseHandler (app) {
 
          }
 
-         app.ask(repoList)
+         app.ask(repoList);
 
          });
         break;
