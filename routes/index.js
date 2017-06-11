@@ -48,7 +48,6 @@ function responseHandler (app) {
          let repo = app.getRawInput();    
           app.ask(app.buildRichResponse()
     // Create a basic card and add it to the rich response
-
     .addSimpleResponse(repo)
     .addBasicCard(app.buildBasicCard(`42 is an even composite number. It 
       is composed of three distinct prime numbers multiplied together. It 
@@ -57,7 +56,6 @@ function responseHandler (app) {
       1 to 42 would take you about twenty-one…`)
       .setTitle('Math & prime numbers')
       .addButton('Read more')
-      .setImage('https://example.google.com/42.png', 'Image alternate text')
     )
   );
   }
