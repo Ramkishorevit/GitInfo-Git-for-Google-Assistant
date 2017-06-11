@@ -6,7 +6,6 @@ const WELCOME_INTENT = 'input.welcome';  // the action name from the API.AI inte
 const TELL_ISSUES='tell.issues';
 const ORGANIZATION_NAME='DefaultWelcomeIntent.DefaultWelcomeIntent-custom';
 const REPO_NAME='repo.name';
-const STARS_COUNT='stars.count';
 
 var repoList='Choose a repo'+'/n';
 
@@ -36,11 +35,11 @@ function responseHandler (app) {
          git.getRepositories(app.getRawInput(),function (err, stream){      
          for(var i=0;i<JSON.parse(stream).length;i++)
          {
-         	repoList = repoList+',' + JSON.parse(stream)[i].name;
+         	repoList = repoList+'\n' + JSON.parse(stream)[i].name;
 
          }
 
-         app.ask(repoList);
+         app.ask(repoList)
 
          });
         break;
@@ -49,13 +48,6 @@ function responseHandler (app) {
           app.data.repo=app.getRawInput();
           list(app);
           break;
-
-    case STARS_COUNT:
-         git.getRepoDetails(app.data.organization,app.data.repo,function (err, stream){     
-         app.ask("There are total of "+JSON.parse(stream).stargazers_count+" stars for this repo");
-         });
-
-        break;      
 
   }
 }
