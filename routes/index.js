@@ -58,6 +58,8 @@ function responseHandler (app) {
       .addButton('Read more')
     )
   );
+       break;   
+
   }
 }
 
