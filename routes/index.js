@@ -6,6 +6,7 @@ const WELCOME_INTENT = 'input.welcome';  // the action name from the API.AI inte
 const TELL_ISSUES='tell.issues';
 const ORGANIZATION_NAME='DefaultWelcomeIntent.DefaultWelcomeIntent-custom';
 const REPO_NAME='repo.name';
+const STARS_COUNT='stars.count';
 
 var repoList='Choose a repo'+'/n';
 
@@ -45,9 +46,16 @@ function responseHandler (app) {
         break;
 
     case REPO_NAME:
-          //list(app);
-          app.ask(app.data.organization);
+          app.data.repo=app.getRawInput();
+          list(app);
           break;
+
+    case STARS_COUNT:
+         git.getRepoDetails(app.data.organization,app.data.repo,function (err, stream){     
+         app.ask("There are total of "+JSON.parse(stream).stargazers_count+" stars for this repo");
+         });
+
+        break;      
 
   }
 }
@@ -56,7 +64,7 @@ function list (app) {
   app.ask(app.buildRichResponse()
     .addSimpleResponse(app.getRawInput())
     .addSuggestions(
-      ['STARS', 'BUGS COUNT', 'FORKS', 'COMMITS']
+      ['STARS', 'ISSUES', 'FORKS', 'COMMITS']
       )
     );
 }
