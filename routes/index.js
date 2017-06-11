@@ -45,8 +45,20 @@ function responseHandler (app) {
         break;
 
     case REPO_NAME:
-         app.ask(app.getRawInput()); 
-         break;
+         let repo = app.getRawInput();    
+          app.ask(app.buildRichResponse()
+    // Create a basic card and add it to the rich response
+    .addSimpleResponse(repo)
+    .addBasicCard(app.buildBasicCard(`42 is an even composite number. It 
+      is composed of three distinct prime numbers multiplied together. It 
+      has a total of eight divisors. 42 is an abundant number, because the 
+      sum of its proper divisors 54 is greater than itself. To count from 
+      1 to 42 would take you about twenty-one…`)
+      .setTitle('Math & prime numbers')
+      .addButton('Read more')
+    )
+  );
+          break;
 
   }
 }
