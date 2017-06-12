@@ -81,10 +81,10 @@ function responseHandler (app) {
   }
 }
 
-function list (app,list) {
+function list (app,lists) {
   app.ask(app.buildRichResponse()
     .addSimpleResponse(app.getRawInput())
-    .addSuggestions(list)
+    .addSuggestions(lists)
     );
 }
 
