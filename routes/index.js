@@ -40,13 +40,13 @@ function responseHandler (app) {
          {
          	repoList.push(JSON.parse(stream)[i].name);
          }
-         list(app,repoList);            
+         list(app,repoList,'Choose a git repo from this list of available repos : ');            
          });
         break;
 
     case REPO_NAME:
           app.data.repo=app.getRawInput()
-          list(app,suggestionsList);
+          list(app,suggestionsList,'Choose one of the available git info we provide');
           break;
 
     case STARS_COUNT:
@@ -81,9 +81,9 @@ function responseHandler (app) {
   }
 }
 
-function list (app,lists) {
+function list (app,lists,richResponse) {
   app.ask(app.buildRichResponse()
-    .addSimpleResponse(app.getRawInput())
+    .addSimpleResponse(richResponse)
     .addSuggestions(lists)
     );
 }
