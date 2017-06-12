@@ -37,3 +37,22 @@ function callback(error, response, body) {
 request(options, callback);
 
 };
+
+exports.getCommitInfo = function(organizationName,repoName,cb) {
+var options = {
+    url: 'https://api.github.com/repos/' + organizationName + '/'+repoName+'/commits',
+    method: 'GET',
+    headers: {
+    'User-Agent': 'request'
+  }
+};
+function callback(error, response, body) {
+  if (!error && response.statusCode == 200) {
+    //console.log(JSON.parse(body)[0].name);
+    cb(null,body)
+  }
+}
+
+request(options, callback);
+
+};

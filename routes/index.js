@@ -10,6 +10,7 @@ const STARS_COUNT='stars.count';
 const BUGS_COUNT='bugs.count';
 const FORKS_COUNT='forks.count';
 const DESCRIPTION='description.tell';
+const COMMITS_INFO='commits.details';
 
 var repoList='Choose a repo'+'/n';
 
@@ -74,7 +75,13 @@ function responseHandler (app) {
          git.getRepoDetails(app.data.organization,app.data.repo,function (err, stream){     
          app.ask(JSON.parse(stream).description);
          });
-         break;            
+         break;
+
+    case COMMITS_INFO:
+         git.getCommitInfo(app.data.organization,app.data.repo,function (err, stream){     
+         app.ask(JSON.parse(stream)[0].commit.author.name+' made the latest commit at '+JSON.parse(stream)[0].commit.author.date+' and there are total of '+JSON.parse(stream).length+' commits made');
+         });
+         break;                   
 
   }
 }
