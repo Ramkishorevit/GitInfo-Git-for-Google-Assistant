@@ -12,10 +12,10 @@ const FORKS_COUNT='forks.count';
 const DESCRIPTION='description.tell';
 const COMMITS_INFO='commits.details';
 
-var repoList='Choose a repo'+'/n';
 
 var git = require("../API/git.js");
-
+var repoList = [];
+var suggestionsList=['DESCRIPTION','STARS', 'BUGS COUNT', 'FORKS', 'COMMITS'];
 
 router.post('/assistant', function(req, res, next) {
   
@@ -33,24 +33,20 @@ function responseHandler (app) {
          app.ask('Welcome! Tell about which git organization you wanna hear ?');
          break;
 
-
     case ORGANIZATION_NAME:
          app.data.organization = app.getRawInput();
          git.getRepositories(app.data.organization,function (err, stream){      
          for(var i=0;i<JSON.parse(stream).length;i++)
          {
-         	repoList = repoList+'\n' + JSON.parse(stream)[i].name;
-
+         	repoList.push(JSON.parse(stream)[i].name);
          }
-
-         app.ask(repoList);
-
+         list(app,repoList);            
          });
         break;
 
     case REPO_NAME:
           app.data.repo=app.getRawInput()
-          list(app);
+          list(app,suggestionsList);
           break;
 
     case STARS_COUNT:
@@ -82,16 +78,13 @@ function responseHandler (app) {
          app.ask(JSON.parse(stream)[0].commit.author.name+' made the latest commit at '+JSON.parse(stream)[0].commit.author.date+' and there are total of '+JSON.parse(stream).length+' commits made.');
          });
          break;                   
-
   }
 }
 
-function list (app) {
+function list (app,list) {
   app.ask(app.buildRichResponse()
     .addSimpleResponse(app.getRawInput())
-    .addSuggestions(
-      ['DESCRIPTION','STARS', 'BUGS COUNT', 'FORKS', 'COMMITS']
-      )
+    .addSuggestions(list)
     );
 }
 
