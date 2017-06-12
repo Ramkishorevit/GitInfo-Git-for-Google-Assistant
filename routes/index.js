@@ -33,7 +33,6 @@ function responseHandler (app) {
 
     case ORGANIZATION_NAME:
          app.data.organization = app.getRawInput();
-         app.ask(app.data.organization);
          git.getRepositories(app.data.organization,function (err, stream){      
          for(var i=0;i<JSON.parse(stream).length;i++)
          {
