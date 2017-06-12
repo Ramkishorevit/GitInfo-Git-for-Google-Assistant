@@ -7,26 +7,13 @@ const TELL_ISSUES='tell.issues';
 const ORGANIZATION_NAME='DefaultWelcomeIntent.DefaultWelcomeIntent-custom';
 const REPO_NAME='repo.name';
 const STARS_COUNT='stars.count';
+const BUGS_COUNT='bugs.count';
+const FORKS_COUNT='forks.count';
+const DESCRIPTION='description.tell';
 
 var repoList='Choose a repo'+'/n';
 
 var git = require("../API/git.js");
-
-
-
-router.get('/', function(req, res, next) {
-      
-    console.log('called');  
-    git.getRepositories('GDGVIT',function (err, stream){      
-         for(var i=0;i<JSON.parse(stream).length;i++)
-         {
-         	repoList = repoList+'\n' + JSON.parse(stream)[i].name;
-
-         }
-
-         res.send(repoList);
-});
-});
 
 
 router.post('/assistant', function(req, res, next) {
@@ -69,7 +56,25 @@ function responseHandler (app) {
          git.getRepoDetails(app.data.organization,app.data.repo,function (err, stream){     
          app.ask("There are total of "+JSON.parse(stream).stargazers_count+" stars for this repo");
          });
-         break;      
+         break;
+
+    case BUGS_COUNT:
+         git.getRepoDetails(app.data.organization,app.data.repo,function (err, stream){     
+         app.ask("There are total of "+JSON.parse(stream).open_issues_count+" open issues for this repo");
+         });
+         break;
+
+    case FORKS_COUNT:
+         git.getRepoDetails(app.data.organization,app.data.repo,function (err, stream){     
+         app.ask("There are total of "+JSON.parse(stream).forks_count+" forks for this repo");
+         });
+         break;
+
+    case DESCRIPTION:
+         git.getRepoDetails(app.data.organization,app.data.repo,function (err, stream){     
+         app.ask(JSON.parse(stream).description);
+         });
+         break;            
 
   }
 }
@@ -78,7 +83,7 @@ function list (app) {
   app.ask(app.buildRichResponse()
     .addSimpleResponse(app.getRawInput())
     .addSuggestions(
-      ['STARS', 'BUGS COUNT', 'FORKS', 'COMMITS']
+      ['DESCRIPTION','STARS', 'BUGS COUNT', 'FORKS', 'COMMITS']
       )
     );
 }
