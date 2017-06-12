@@ -14,6 +14,21 @@ var git = require("../API/git.js");
 
 
 
+router.get('/', function(req, res, next) {
+      
+    console.log('called');  
+    git.getRepositories('GDGVIT',function (err, stream){      
+         for(var i=0;i<JSON.parse(stream).length;i++)
+         {
+         	repoList = repoList+'\n' + JSON.parse(stream)[i].name;
+
+         }
+
+         res.send(repoList);
+});
+});
+
+
 router.post('/assistant', function(req, res, next) {
   
    const app = new ApiAiApp({request: req, response: res});
