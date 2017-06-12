@@ -55,19 +55,19 @@ function responseHandler (app) {
 
     case STARS_COUNT:
          git.getRepoDetails(app.data.organization,app.data.repo,function (err, stream){     
-         app.ask("There are total of "+JSON.parse(stream).stargazers_count+" stars for this repo");
+         app.ask("There are total of "+JSON.parse(stream).stargazers_count+" stars for this repo.");
          });
          break;
 
     case BUGS_COUNT:
          git.getRepoDetails(app.data.organization,app.data.repo,function (err, stream){     
-         app.ask("There are total of "+JSON.parse(stream).open_issues_count+" open issues for this repo");
+         app.ask("There are total of "+JSON.parse(stream).open_issues_count+" open issues for this repo.");
          });
          break;
 
     case FORKS_COUNT:
          git.getRepoDetails(app.data.organization,app.data.repo,function (err, stream){     
-         app.ask("There are total of "+JSON.parse(stream).forks_count+" forks for this repo");
+         app.ask("There are total of "+JSON.parse(stream).forks_count+" forks for this repo.");
          });
          break;
 
@@ -79,7 +79,7 @@ function responseHandler (app) {
 
     case COMMITS_INFO:
          git.getCommitInfo(app.data.organization,app.data.repo,function (err, stream){     
-         app.ask(JSON.parse(stream)[0].commit.author.name+' made the latest commit at '+JSON.parse(stream)[0].commit.author.date+' and there are total of '+JSON.parse(stream).length+' commits made');
+         app.ask(JSON.parse(stream)[0].commit.author.name+' made the latest commit at '+JSON.parse(stream)[0].commit.author.date+' and there are total of '+JSON.parse(stream).length+' commits made.');
          });
          break;                   
 
