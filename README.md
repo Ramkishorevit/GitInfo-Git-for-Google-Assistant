@@ -14,29 +14,20 @@ Please prepare all the nuts and bolts as shown here for API.AI and Google Action
 Screenshots with description -
 ------------------------------------
 
-<img src="https://github.com/Ramkishorevit/GitInfo-Git-for-Google-Assistant/blob/master/public/1.png" height="500" width="280">  <img src="https://github.com/Ramkishorevit/GitInfo-Git-for-Google-Assistant/blob/master/public/2.png" height="500" width="280">
+<img src="https://github.com/Ramkishorevit/GitInfo-Git-for-Google-Assistant/blob/master/public/1.png" height="500" width="280">        <img src="https://github.com/Ramkishorevit/GitInfo-Git-for-Google-Assistant/blob/master/public/2.png" height="500" width="280">
 
 Now from the list of repositories we can choose any to get some details and insight about it. So here we go,
 
 
-<img src="https://github.com/Ramkishorevit/GitInfo-Git-for-Google-Assistant/blob/master/public/3.png" height="500" width="280">
-
-
-<img src="https://github.com/Ramkishorevit/GitInfo-Git-for-Google-Assistant/blob/master/public/4.png" height="500" width="280">
+<img src="https://github.com/Ramkishorevit/GitInfo-Git-for-Google-Assistant/blob/master/public/3.png" height="500" width="280">        <img src="https://github.com/Ramkishorevit/GitInfo-Git-for-Google-Assistant/blob/master/public/4.png" height="500" width="280">
 
 It will be always great for the owner of the repo to see that “0 open issues” including me. So we can try out description and some commit details as well.
 
 
-<img src="https://github.com/Ramkishorevit/GitInfo-Git-for-Google-Assistant/blob/master/public/5.png" height="500" width="280">
+<img src="https://github.com/Ramkishorevit/GitInfo-Git-for-Google-Assistant/blob/master/public/5.png" height="500" width="280">       <img src="https://github.com/Ramkishorevit/GitInfo-Git-for-Google-Assistant/blob/master/public/6.png" height="500" width="280">
 
 
-<img src="https://github.com/Ramkishorevit/GitInfo-Git-for-Google-Assistant/blob/master/public/6.png" height="500" width="280">
-
-
-<img src="https://github.com/Ramkishorevit/GitInfo-Git-for-Google-Assistant/blob/master/public/7.png" height="500" width="280">
-
-
-<img src="https://github.com/Ramkishorevit/GitInfo-Git-for-Google-Assistant/blob/master/public/8.png" height="500" width="280">
+<img src="https://github.com/Ramkishorevit/GitInfo-Git-for-Google-Assistant/blob/master/public/7.png" height="500" width="280">       <img src="https://github.com/Ramkishorevit/GitInfo-Git-for-Google-Assistant/blob/master/public/8.png" height="500" width="280">
 
 ------------------------------------
 
