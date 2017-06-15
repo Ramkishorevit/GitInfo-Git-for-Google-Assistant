@@ -15,6 +15,7 @@ Screenshots with description -
 ------------------------------------
 
 ![Alt text](https://github.com/Ramkishorevit/GitInfo-Git-for-Google-Assistant/blob/master/public/1.png =100x20)
+<img src="https://github.com/Ramkishorevit/GitInfo-Git-for-Google-Assistant/blob/master/public/1.png" height="120" width="48">
 
 ![Alt text](https://github.com/Ramkishorevit/GitInfo-Git-for-Google-Assistant/blob/master/public/2.png "")
 
