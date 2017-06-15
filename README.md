@@ -42,7 +42,7 @@ If you want to contribute to this project and take Git to a whole new level? Fee
 
 For any Queries contact ramkishorevit@gmail.com
  
-Thanks to Skcript for continuous support.
+Thanks to [Skcript](https://www.skcript.com/ "Skcript") for continuous support.
  
 Just code and
 Just Git !
