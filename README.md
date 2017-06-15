@@ -14,7 +14,7 @@ Please prepare all the nuts and bolts as shown here for API.AI and Google Action
 Screenshots with description -
 ------------------------------------
 
-<img src="https://github.com/Ramkishorevit/GitInfo-Git-for-Google-Assistant/blob/master/public/1.png" height="400" width="150">
+<img src="https://github.com/Ramkishorevit/GitInfo-Git-for-Google-Assistant/blob/master/public/1.png" height="500" width="280">
 
 ![Alt text](https://github.com/Ramkishorevit/GitInfo-Git-for-Google-Assistant/blob/master/public/2.png "")
 
